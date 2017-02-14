@@ -3,4 +3,11 @@ Rails.application.routes.draw do
   root 'posts#index'
   get '/posts/new' => 'posts#new'
   post '/posts' => 'posts#create'
+
+  get '/users/new' => 'users#new'
+  post '/users' => 'users#create', as: 'users'
+
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create', as: 'logins'
+  delete '/logout' => 'sessions#destroy'
 end
