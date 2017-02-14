@@ -6,6 +6,8 @@ class CreateGames < ActiveRecord::Migration[5.0]
       t.string :esrb_rating, null: false
       t.string :genre
       t.integer :score
+      t.references :user
+      t.references :post
 
       t.timestamps
     end

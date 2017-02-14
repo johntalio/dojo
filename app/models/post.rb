@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
-  belongs_to user
-  has_many games
+  belongs_to :user
+  has_many :games
 
   validates :title, :body, presence: true
   validates :title, length: {minimum: 3}
