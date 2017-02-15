@@ -1,4 +1,8 @@
 class PostsController < ApplicationController
+  def show
+    @post = Post.find(params[:id])
+  end
+
   def index
     @posts = Post.all
   end
@@ -13,7 +17,7 @@ class PostsController < ApplicationController
       redirect_to @post
     else
       render 'new'
-    end    
+    end
   end
 
   private
