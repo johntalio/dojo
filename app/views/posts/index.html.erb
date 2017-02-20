@@ -8,6 +8,6 @@
 <h2>All Games</h2>
 <% @games.each do |game| %>
   <tr>
-    <td><p><strong><%= game.name %></strong></p></td>
+    <td><p><strong><%= link_to game.name, game_path(game) %></strong></p></td>
   </tr>
 <% end %>
