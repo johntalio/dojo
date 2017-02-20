@@ -5,10 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.delete_all
-Post.delete_all
-Game.delete_all
+users = 5.times.map do
+  User.create!(username: Faker::Name.first_name, email: Faker::Internet.email, password: "abc123")
+end
 
-users = User.create!([{username: 'toad1', email: 'toad@gmail.com', password: 'abc123'}, {username: 'frog2', email: 'frog@gmail.com', password: 'abc123'}, {username: 'lizard3', email: 'lizard@gmail.com', password: 'abc123'}])
-posts = Post.create!([{title: 'Hey! My first post!', body: 'Wow, this is so amazing!', user_id: users.first}, {title: 'Dude....so awesome', body: 'Holy moly, man!', user_id: users.first}, {title: 'This game is so crazy', body: 'Crazy crazy crazy crazy crazy', user_id: users.last}])
-games = Game.create!([{name: 'Big Bad Baddies', platform: 'Nintendo 64', esrb_rating: 'M', genre: 'Action', score: 8, user_id: users.first, post_id: posts.first}])
+users.each do |user|
+  Post.create!(title: "Such post, much wow", body: "So Wow", user_id: user.id)
+end
+
+users.each do |user|
+  Game.create!(name: Faker::Zelda.game, platform: "Nintendo", esrb_rating: "E", genre: "Adventure", score: 8, user_id: user.id)
+end
