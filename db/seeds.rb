@@ -9,6 +9,6 @@ User.delete_all
 Post.delete_all
 Game.delete_all
 
-users = User.create([{username: 'toad1', email: 'toad@gmail.com', password: 'abc123'}, {username: 'frog2', email: 'frog@gmail.com', password: 'abc123'}, {username: 'lizard3', email: 'lizard@gmail.com', password: 'abc123'}])
-posts = Post.create([{title: 'Hey! My first post!', body: 'Wow, this is so amazing!'}, {title: 'Dude....so awesome', body: 'Holy moly, man!'}, {title: 'This game is so crazy', body: 'Crazy crazy crazy crazy crazy'}, {title: 'I hated this game.', body: 'This game sucks a big, big bag of doodoo'}])
-games = Game.create([{name: 'Big Bad Baddies', platform: 'Nintendo 64', esrb_rating: 'M', genre: 'Action', score: 8}, {name: "Pile 'Em Up", platform: 'Playstation', esrb_rating: 'E', genre: 'Puzzle', score: 5}])
+users = User.create!([{username: 'toad1', email: 'toad@gmail.com', password: 'abc123'}, {username: 'frog2', email: 'frog@gmail.com', password: 'abc123'}, {username: 'lizard3', email: 'lizard@gmail.com', password: 'abc123'}])
+posts = Post.create!([{title: 'Hey! My first post!', body: 'Wow, this is so amazing!', user_id: users.first}, {title: 'Dude....so awesome', body: 'Holy moly, man!', user_id: users.first}, {title: 'This game is so crazy', body: 'Crazy crazy crazy crazy crazy', user_id: users.last}])
+games = Game.create!([{name: 'Big Bad Baddies', platform: 'Nintendo 64', esrb_rating: 'M', genre: 'Action', score: 8, user_id: users.first, post_id: posts.first}])
