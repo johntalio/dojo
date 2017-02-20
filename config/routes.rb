@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   post '/users' => 'users#create', as: 'users'
   get '/users/:id' => 'users#show', as: 'user'
 
+  get '/games/new' => 'games#new'
+  post '/games' => 'games#create', as: 'games'
+  get '/games/:id' => 'games#show', as: 'game'
+
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create', as: 'logins'
   delete '/logout' => 'sessions#destroy'

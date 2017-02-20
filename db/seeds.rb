@@ -5,10 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.delete_all
-Post.delete_all
-Game.delete_all
+users = 5.times.map do
+  User.create!(username: Faker::Name.first_name, email: Faker::Internet.email, password: "abc123")
+end
 
-users = User.create([{username: 'toad1', email: 'toad@gmail.com', password: 'abc123'}, {username: 'frog2', email: 'frog@gmail.com', password: 'abc123'}, {username: 'lizard3', email: 'lizard@gmail.com', password: 'abc123'}])
-posts = Post.create([{title: 'Hey! My first post!', body: 'Wow, this is so amazing!'}, {title: 'Dude....so awesome', body: 'Holy moly, man!'}, {title: 'This game is so crazy', body: 'Crazy crazy crazy crazy crazy'}, {title: 'I hated this game.', body: 'This game sucks a big, big bag of doodoo'}])
-games = Game.create([{name: 'Big Bad Baddies', platform: 'Nintendo 64', esrb_rating: 'M', genre: 'Action', score: 8}, {name: "Pile 'Em Up", platform: 'Playstation', esrb_rating: 'E', genre: 'Puzzle', score: 5}])
+users.each do |user|
+  Post.create!(title: "Such post, much wow", body: "So Wow", user_id: user.id)
+end
+
+users.each do |user|
+  Game.create!(name: Faker::Zelda.game, platform: "Nintendo", esrb_rating: "E", genre: "Adventure", score: 8, user_id: user.id)
+end

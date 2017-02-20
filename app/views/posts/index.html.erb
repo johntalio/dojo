@@ -1,8 +1,13 @@
 <h2>All Posts</h2>
-
 <% @posts.each do |post| %>
   <tr>
-    <td><p><strong>Title:</strong> <%= post.title %></td>
-    <td><strong>Body:</strong> <%= post.body %></p></td>
+    <td><p><strong><%= link_to post.title, post_path(post) %></strong></td>
+  </tr>
+<% end %>
+
+<h2>All Games</h2>
+<% @games.each do |game| %>
+  <tr>
+    <td><p><strong><%= link_to game.name, game_path(game) %></strong></p></td>
   </tr>
 <% end %>
