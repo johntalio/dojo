@@ -1,6 +1,6 @@
 <% if @post.errors.any? %>
   <div class="alert">
-    This form contains <%= pluralize(@post.errors.count, "error") %>.
+    The form contains <%= pluralize(@post.errors.count, "error") %>.
   </div>
 
   <ul>
