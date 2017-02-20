@@ -1,0 +1,17 @@
+.nav-bar {
+  text-align: center;
+  border: solid black;
+  background-color: red;
+}
+
+.posts-container {
+  text-align: center;
+  border: solid purple;
+  background-color: brown;
+}
+
+.games-container {
+  text-align: center;
+  border: solid green;
+  background-color: yellow;
+}
