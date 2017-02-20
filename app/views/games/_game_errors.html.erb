@@ -1,0 +1,11 @@
+<% if @game.errors.any? %>
+  <div class="alert">
+    The form contains <%= pluralize(@game.errors.count, "error") %>.
+  </div>
+
+  <ul>
+    <% @game.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
