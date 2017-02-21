@@ -1,2 +1,12 @@
-<%= @user.username %>
-<%= @user.email %>
+<div class="user-show-page">
+  <h2>Hiya, @user.username</h2>
+  <%= @user.email %>
+  
+  <% @user.posts.each do |post| %>
+    <p><%= post.title %></p>
+  <% end %>
+
+  <% @user.games.each do |game| %>
+    <p><%= game.name %>, <%= game.platform %></p>
+  <% end %>
+</div>
