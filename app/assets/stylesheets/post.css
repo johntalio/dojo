@@ -5,3 +5,11 @@
   border: solid white;
   background-color: brown;
 }
+
+.new-post-form {
+  text-align: center;
+  width: 50%;
+  margin-left: 25%;
+  border: solid white;
+  background-color: brown;
+}

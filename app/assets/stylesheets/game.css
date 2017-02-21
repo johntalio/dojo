@@ -3,5 +3,13 @@
   width: 50%;
   margin-left: 25%;
   border: solid white;
-  background-color: purple;
+  background-color: violet;
+}
+
+.new-game-form {
+  text-align: center;
+  width: 50%;
+  margin-left: 25%;
+  border: solid white;
+  background-color: violet;
 }

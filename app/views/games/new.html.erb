@@ -1,22 +1,24 @@
-<h2>Add Game</h2>
+<div class="new-game-form">
+  <h2>Add Game</h2>
 
-<%= form_for @game do |f| %>
-  <%= render 'game_errors' %>
+  <%= form_for @game do |f| %>
+    <%= render 'game_errors' %>
 
-  <%= f.label :name %><br>
-  <%= f.text_field :name %><br><br>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %><br><br>
 
-  <%= f.label :platform %><br>
-  <%= f.text_field :platform %><br><br>
+    <%= f.label :platform %><br>
+    <%= f.text_field :platform %><br><br>
 
-  <%= f.label :esrb_rating %><br>
-  <%= f.text_field :esrb_rating %><br><br>
+    <%= f.label :esrb_rating %><br>
+    <%= f.text_field :esrb_rating %><br><br>
 
-  <%= f.label :genre %><br>
-  <%= f.text_field :genre %><br><br>
+    <%= f.label :genre %><br>
+    <%= f.text_field :genre %><br><br>
 
-  <%= f.label :score %><br>
-  <%= f.text_field :score %><br><br>
+    <%= f.label :score %><br>
+    <%= f.text_field :score %><br><br>
 
-  <%= f.submit 'Add' %>
-<% end %>
+    <%= f.submit 'Add' %>
+  <% end %>
+</div>
