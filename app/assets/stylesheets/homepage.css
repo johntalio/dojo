@@ -1,16 +1,25 @@
+body {
+  background-color: black;
+}
+
 .nav-bar {
   text-align: center;
-  border: solid black;
+  border: solid blue;
   background-color: red;
 }
 
 .posts-container {
+  float: left;
   text-align: center;
-  border: solid purple;
-  background-color: brown;
+  width: 48%;
+  border: solid yellow;
+  background-color: green;
 }
 
 .games-container {
+  float: right;
+  text-align: center;
+  width: 48%;
   text-align: center;
   border: solid green;
   background-color: yellow;
