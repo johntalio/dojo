@@ -10,7 +10,10 @@ users = 5.times.map do
 end
 
 users.each do |user|
-  Post.create!(title: "Such post, much wow", body: "So Wow", user_id: user.id)
+  titles = ["I can't believe Bungie!", "From Software is the best!", "Mario is so overrated", "Zelda is waifu", "You are ALL wrong!", "I can't believe how naive people are!", "People who play video games are nerds", "Video games are life"]
+  bodies = ["Bungie let go of one of my favorite franchises and now it's gone to hell!", "Dark Souls is the greatest franchise EVER! Phenomenal IP", "Mario can drown in sewer water for all I care...", "ZELDA I'LL BE YOUR HERO", "And I'm right!", "Can't you see that Chun Lee is best waifu?!", "But people who play chess are geniuses. Heh.", "And I will appreciated this life forever :D"]
+
+  Post.create!(title: titles.sample, body: bodies.sample, user_id: user.id)
 end
 
 users.each do |user|
