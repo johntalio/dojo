@@ -13,3 +13,7 @@
   border: solid white;
   background-color: violet;
 }
+
+#game-comments {
+  text-align: left;
+}

@@ -13,3 +13,7 @@
   border: solid white;
   background-color: brown;
 }
+
+#post-comments {
+  text-align: left;
+}

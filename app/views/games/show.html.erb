@@ -5,4 +5,11 @@
   <p><strong>ESRB Rating:</strong> <%= @game.esrb_rating %></p>
   <p><strong>Genre:</strong> <%= @game.genre %></p>
   <p><strong>User Score:</strong> <%= @game.score %>/10</p>
+
+  <ul id="game-comments">
+    <h3>Comments</h3>
+    <% @game_comments.each do |comment| %>
+      <li><%= comment.comment %></li>
+    <% end %>
+  </ul>
 </div>
