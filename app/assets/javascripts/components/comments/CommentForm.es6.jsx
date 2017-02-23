@@ -1,13 +1,10 @@
 class CommentForm extends React.Component {
-  constructor() {
-    super()
-  }
 
   render() {
     return(
       <div>
         <form className="comment-form">
-          <input type="text" placeholder="your comment" />
+          <textarea placeholder="your comment" rows="5" cols="30" />
           <input type="submit" value="Submit" />
         </form>
       </div>

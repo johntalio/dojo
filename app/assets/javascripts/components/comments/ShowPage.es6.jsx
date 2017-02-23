@@ -1,27 +1,19 @@
 class ShowPage extends React.Component {
   constructor() {
     super()
-    this.state = {commentForm: ""}
+    this.state = {showForm: false}
     this.handleClick = this.handleClick.bind(this)
   }
 
-  handleClick(event) {
-    event.preventDefault()
-    $.ajax({
-      url: '/game_comments/new'
-    }).done(response => {
-      console.log(response)
-    })
-    // console.log("click", event.target)
-    // this.setState({commentForm: <CommentForm />})
+  handleClick() {
+    this.setState({showForm: true})
   }
 
   render() {
     return(
       <div>
-        <form id="comment-button" onClick={this.handleClick}>
-          <input type="button" value="Leave a comment" />
-        </form>
+        <input id="comment-button" type="button" value="Leave a comment" onClick={this.handleClick} />
+        {this.state.showForm ? <CommentForm /> : null}
       </div>
     )
   }
