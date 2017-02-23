@@ -22,10 +22,10 @@ end
 
 post_comments = posts.each do |post|
   comments = ["Nice post!", "You are so right!", "WRONG kek", "LOL how dumb", "I can't believe how mindblowing your post is", "Moron", "Great input, brotha!", "nerd lol such nerd", "good on ya", "oy m8 i r8 this 8/8", "stupendous! my favorite word!", "coooooool"]
-  PostComment.create!(comment: comments.sample, post_id: post.id)
+  PostComment.create!(comment: comments.sample, post_id: post.id, user_id: users.first.id)
 end
 
 game_comments = games.each do |game|
   comments = ["Insightful", "Darn right, preach", "So smart, man, so smart", "You are all fools", "If I could offer my two cents...", "dank memes", "this game is on point", "this game is for doogies...whatever that is", "poobrain!", "you sir, are the best", "thank you for adding this game", "awesome game", "why, why u add this game..."]
-  GameComment.create!(comment: comments.sample, game_id: game.id)
+  GameComment.create!(comment: comments.sample, game_id: game.id, user_id: users.first.id)
 end
