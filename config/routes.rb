@@ -13,8 +13,6 @@ Rails.application.routes.draw do
   post '/games' => 'games#create', as: 'games'
   get '/games/:id' => 'games#show', as: 'game'
 
-  get '/game_comments/new' => 'game_comments#new'
-
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create', as: 'logins'
   delete '/logout' => 'sessions#destroy'
