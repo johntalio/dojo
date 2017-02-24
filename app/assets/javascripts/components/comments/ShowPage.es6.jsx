@@ -5,6 +5,13 @@ class ShowPage extends React.Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
+  // postComment(comment) {
+  //   $.ajax({
+  //     method: 'POST'
+  //     url: '/game_comments'
+  //   })
+  // }
+
   handleClick() {
     this.setState({showForm: true})
   }
