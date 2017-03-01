@@ -9,9 +9,11 @@ class ShowPage extends React.Component {
   postComment(comment) {
     $.ajax({
       method: 'POST',
-      url: '/games/:game_id/game_comments'
+      url: `/games/1`,
+      data: {game: {game_comment: comment}}
     }).done(response => {
-      this.setState({comments: response})
+      console.log("booohoo", response)
+      // this.setState({comments: [response].concat(this.state.comments)})
     })
   }
 

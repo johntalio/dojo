@@ -1,7 +1,7 @@
 class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
-    @game_comments = GameComment.all
+    @game_comments = GameComment.where(game_id: @game).all
   end
 
   def new
@@ -19,9 +19,28 @@ class GamesController < ApplicationController
     end
   end
 
+  def comment
+    if logged_in?
+      debugger
+      @game = Game.find(1)
+      @game_comment = GameComment.new(comment: game_comments_params, user_id: current_user.id, game_id: @game)
+      if @game_comment.save
+        redirect_to @game
+      else
+        flash[:danger] = "Your comment was not posted."
+      end
+    else
+      redirect_to root
+    end
+  end
+
   private
 
     def game_params
       params.require(:game).permit(:name, :platform, :esrb_rating, :genre, :score)
+    end
+
+    def game_comments_params
+      params.require(:game_comment).permit(:comment)
     end
 end
