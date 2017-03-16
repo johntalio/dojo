@@ -2,8 +2,15 @@
   text-align: center;
   width: 50%;
   margin-left: 25%;
-  border: solid white;
-  background-color: brown;
+  border: solid steelblue;
+  background-color: springgreen;
+  padding-bottom: 20px;
+  margin-top: 10px;
+}
+
+.post-show-page:hover {
+  background-color: crimson;
+  border: dotted gold;
 }
 
 .new-post-form {
