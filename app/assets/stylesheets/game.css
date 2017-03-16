@@ -2,8 +2,15 @@
   text-align: center;
   width: 50%;
   margin-left: 25%;
-  border: solid white;
-  background-color: violet;
+  border: solid cadetblue;
+  background-color: coral;
+  padding-bottom: 20px;
+  margin-top: 10px;
+}
+
+.game-show-page:hover {
+  background-color: darkseagreen;
+  border: dotted darkslateblue;
 }
 
 .new-game-form {

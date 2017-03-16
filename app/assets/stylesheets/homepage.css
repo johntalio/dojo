@@ -1,26 +1,40 @@
-body {
-  background-color: black;
-}
-
 .nav-bar {
   text-align: center;
   border: solid blue;
   background-color: red;
+  padding-bottom: 20px;
+}
+
+.nav-bar:hover {
+  background-color: lightsalmon;
+  border: dotted blue;
 }
 
 .posts-container {
   float: left;
+  margin-top: 10px;
   text-align: center;
   width: 48%;
   border: solid yellow;
-  background-color: green;
+  background-color: lightseagreen;
+}
+
+.posts-container:hover {
+  background-color: lightblue;
+  border: dotted yellow;
 }
 
 .games-container {
   float: right;
+  margin-top: 10px;
   text-align: center;
   width: 48%;
   text-align: center;
-  border: solid green;
-  background-color: yellow;
+  border: solid lightslategray;
+  background-color: darkcyan;
+}
+
+.games-container:hover {
+  background-color: cyan;
+  border: dotted lightslategray;
 }
