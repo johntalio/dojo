@@ -3,18 +3,20 @@ class ShowPage extends React.Component {
     super()
     this.state = {showForm: false, comments: []}
     this.handleClick = this.handleClick.bind(this)
-    this.postComment = this.postComment.bind(this)
+    this.postGameComment = this.postGameComment.bind(this)
   }
 
-  postComment(comment) {
+  postGameComment(gameComment) {
     $.ajax({
       method: 'POST',
       url: `/games/1`,
-      data: {game: {game_comment: comment}}
-    }).done(response => {
-      console.log("booohoo", response)
-      // this.setState({comments: [response].concat(this.state.comments)})
+      data: {game_comment: {comment: gameComment}}
+    }).done((response) => {
+      // console.log("booohoo", response)
+      this.setState({comments: [response].concat(this.state.comments)})
+      // this.setState({comments: [response, ...this.state.comments]})
     })
+    debugger
   }
 
   handleClick() {
@@ -25,7 +27,7 @@ class ShowPage extends React.Component {
     return(
       <div>
         <input id="comment-button" type="button" value="Leave a comment" onClick={this.handleClick} />
-        {this.state.showForm ? <CommentForm postComment={this.postComment} /> : null}
+        {this.state.showForm ? <CommentForm postGameComment={this.postGameComment} /> : null}
       </div>
     )
   }
