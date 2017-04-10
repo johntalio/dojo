@@ -21,16 +21,17 @@ class GamesController < ApplicationController
 
   def comment
     if logged_in?
-      debugger
       @game = Game.find(1)
       @game_comment = GameComment.new(comment: game_comments_params, user_id: current_user.id, game_id: @game)
       if @game_comment.save
+        flash.now[:notice] = "Post successful!"
         redirect_to @game
       else
         flash[:danger] = "Your comment was not posted."
       end
     else
-      redirect_to root
+      flash.now[:notice] = "You must be logged in to post a comment."
+      redirect_to root_path
     end
   end
 
