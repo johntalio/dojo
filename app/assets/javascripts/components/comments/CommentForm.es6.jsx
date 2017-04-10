@@ -8,7 +8,7 @@ class CommentForm extends React.Component {
     event.preventDefault()
     let commentInput = this.refs.commentForm
     console.log("hi", commentInput.value)
-    this.props.postComment(commentInput.value)
+    this.props.postGameComment(commentInput.value)
     commentInput.value = ''
   }
 
