@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   post '/games' => 'games#create', as: 'games'
   get '/games/:id' => 'games#show', as: 'game'
 
-  post '/games/1' => 'games#comment', as: 'game_comments'
+  post "/games/1" => 'games#comment', as: 'game_comments'
 
   # get '/games/:id/game_comments' => 'game_comments#index'
   # get '/game_comments/new' => 'game_comments#new'
